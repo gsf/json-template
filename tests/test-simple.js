@@ -7,7 +7,7 @@ exports["test - Simple example"] = function() {
 };
 exports.testComment = function() {
     var t = Template("Hello {# Comment} There");
-    assert.equal(t.expand({}), "Hello There");
+    assert.equal(t.expand({}), "Hello  There");
 };
 exports.testSpace = function() {
     var t = Template('{.space}{.space}');
@@ -25,4 +25,8 @@ exports.testOnlyDeclaration = function() {
     var t = Template('{# Comment}');
     assert.equal(t.expand({}), '');
 };
+
+if (module === require.main) {
+    require("test").run(exports);
+}
 

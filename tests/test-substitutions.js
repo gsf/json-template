@@ -24,3 +24,7 @@ exports.testOnlyDeclaration = function() {
     assert.equal(t.expand({}), '');
 };
 
+if (module === require.main) {
+    require("test").run(exports);
+}
+
